@@ -1,0 +1,42 @@
+workers: 8
+gpu: [0,1,2,3]
+
+batch_size: 32
+test_batch_size: 4
+epoch: 80
+lr: 0.005
+optimizer: Adam
+kfold: False
+resume: -1
+save_results: True
+dice_loss: True
+percent: 100
+
+size: 256
+sp_num: 1024
+
+inpainting: False
+transformer: True
+ensemble: True
+patch_size: 8
+window_size: 4
+embed_dim: 96
+depths: [2, 2, 2, 2]
+num_heads: [3, 6, 12, 24]
+stage: [10, 99, 30, 25, 20, 15]
+# stage: [99, 30, 27, 25, 23, 21, 20, 18, 16, 15, 13, 11, 10, 8, 6, 5]
+
+evaluate: False
+smoke_test: True
+update_config: False
+resume_wandb: False
+use_tensorboard: False
+log_name: SwinUNETR_17
+tags: ['SwinUNETR', 'archive']
+id: awgirupo
+
+model: Salt_ensemble_simple
+dataset_name: ISIC18
+description: baseline for ISIC17
+save_name: /data/wangzh/experiments/salt/Salt_ensemble_simple/2.18/18_v2_img_256_patch_8_window_4_embeddim_96_with_inpainting
+# pretrained: /data/wangzh/experiments/salt/Salt_ensemble_simple/10.4/Archive_size_128_dim_128_head_4/1/model_ISIC_Archive_segmentation_best_0.ckpt
